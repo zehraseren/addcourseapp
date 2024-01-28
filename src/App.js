@@ -6,7 +6,7 @@ import CourseValue from "./components/CourseValue";
 
 function App() {
   return (
-    <div className="">
+    <div>
       <CourseForm />
       <CourseSearch />
       <CourseList />
