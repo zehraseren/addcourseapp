@@ -21,8 +21,11 @@ const courseSlice = createSlice({
       });
       state.data = updatedCourses;
     },
+    changeSearchTerm(state, action) {
+      state.searchTerm = action.payload;
+    },
   },
 });
 
-export const { addCourse, removeCourse } = courseSlice.actions;
+export const { addCourse, removeCourse, changeSearchTerm } = courseSlice.actions;
 export const courseReducer = courseSlice.reducer;

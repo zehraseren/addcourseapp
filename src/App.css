@@ -89,3 +89,25 @@
   display: block;
   margin: 40px 20px;
 }
+
+.listHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.listHeader h3.title {
+  margin-bottom: 0;
+}
+
+.listHeader .search {
+  display: flex;
+  align-items: center;
+}
+
+.listHeader .search .label {
+  margin-bottom: 0;
+  margin-right: 10px;
+}
