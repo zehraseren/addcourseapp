@@ -4,10 +4,12 @@ import { removeCourse } from "../store/slices/courseSlice";
 
 function CourseList() {
   const dispatch = useDispatch();
-  const courses = useSelector((state) => {
-    return state.courses.data;
+  const { courses } = useSelector(({ form, courses: { data, searchTerm } }) => {
+    const filteredCourses = data.filter((course) =>
+      course.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    return { courses: filteredCourses };
   });
-
   const renderedCourses = courses.map((course) => {
     return (
       <div className="panel" key={course.id}>

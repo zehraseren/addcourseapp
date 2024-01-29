@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
 
 function CourseValue() {
-  return (
-    <div>CourseValue</div>
-  )
+  const totalCost = useSelector(({ form, courses: { data, searchTerm } }) =>
+    data
+      .filter((course) =>
+        course.name.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+      .reduce((acc, course) => acc + course.cost, 0)
+  );
+  return <div className="coursePrice">Toplam Tutar: {totalCost}₺</div>;
 }
 
-export default CourseValue
+export default CourseValue;
